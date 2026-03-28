@@ -49,7 +49,7 @@ No external libraries or package managers are required.
 ## How to Compile
 
 ```bash
-g++ -std=c++11 -o student_system app.cpp
+g++ -std=c++11 -o student_system App.cpp
 ```
 
 ---
@@ -112,9 +112,9 @@ Goodbye!
 | Field | Rule |
 |-------|------|
 | ID | Integer, must be unique |
-| Name | Single word (no spaces) |
+| Name | Supports full names (spaces allowed) |
 | GPA | Decimal between `0.0` and `4.0` |
-| Course | Single word (no spaces), no duplicates per student |
+| Course | Supports full course names (spaces allowed), no duplicates per student |
 
 ---
 
@@ -122,7 +122,7 @@ Goodbye!
 
 ```
 .
-├── app.cpp       # Main source file (all code)
+├── App.cpp       # Main source file (all code)
 ├── README.md     # This file
 └── Report.docx   # Full project report
 ```

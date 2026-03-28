@@ -3,6 +3,7 @@
 #include <string>
 #include <set>
 #include <algorithm>
+#include <limits>
 
 using namespace std;
 
@@ -22,9 +23,8 @@ private:
     set<string> courses;
 
 public:
-    Student(int i, string n, double g) : Person() {
+    Student(int i, string n, double g) : Person(n) {
         id = i;
-        name = n;
         gpa = g;
     }
 
@@ -79,7 +79,8 @@ void addStudent() {
     }
 
     cout << "Enter Name: ";
-    cin >> name;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    getline(cin, name);
 
     cout << "Enter GPA: ";
     cin >> gpa;
@@ -145,7 +146,8 @@ void enrollCourse() {
     }
 
     cout << "Enter Course Name: ";
-    cin >> course;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    getline(cin, course);
     students[index].enrollCourse(course);
     cout << "Course added.\n";
 }
